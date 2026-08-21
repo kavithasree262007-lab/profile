@@ -1,0 +1,862 @@
+/* =========================================================
+   KAVITHA — PORTFOLIO STYLESHEET
+   Design language: inspired by design-tool "canvases" (Figma-like
+   artboards with corner brackets) paired with a developer's mono
+   accents. Edit the CSS variables below to re-theme the whole site.
+   ========================================================= */
+
+/* ---------- 1. DESIGN TOKENS ---------- */
+:root {
+  /* Colors */
+  --color-bg: #f7f7fb;
+  --color-surface: #ffffff;
+  --color-ink: #1b1b2f;
+  --color-muted: #6b6b80;
+  --color-border: #e4e3f0;
+  --color-primary: #5b4fe9;
+  --color-primary-dark: #4638c2;
+  --color-primary-light: #eeecfd;
+  --color-accent: #ff6b5b;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* Layout */
+  --max-width: 1140px;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 20px 45px -25px rgba(27, 27, 47, 0.35);
+}
+
+/* ---------- 2. RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+.section {
+  padding: 90px 24px;
+}
+
+.section-muted {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-heading,
+.hero-text,
+.about-grid,
+.objective-quote,
+.education-card,
+.skills-columns,
+.internship-grid,
+.project-grid,
+.contact-grid {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+/* ---------- 3. BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  border: 1.5px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -12px rgba(91, 79, 233, 0.55);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-small {
+  padding: 10px 22px;
+  font-size: 0.85rem;
+}
+
+/* ---------- 4. HEADER / NAVIGATION ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(247, 247, 251, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.logo-dot {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a {
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+.nav-cta {
+  background-color: var(--color-ink);
+  color: #ffffff !important;
+  padding: 9px 18px;
+  border-radius: 999px;
+}
+
+.nav-cta:hover {
+  background-color: var(--color-primary);
+}
+
+/* Pure-CSS mobile menu toggle (checkbox hack, no JavaScript needed) */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.nav-toggle-label span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-ink);
+  border-radius: 2px;
+}
+
+/* ---------- 5. HERO SECTION ---------- */
+.hero {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 80px 24px 100px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-name {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  margin-bottom: 6px;
+}
+
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--color-primary);
+  margin-bottom: 22px;
+}
+
+.role-divider {
+  color: var(--color-accent);
+}
+
+.hero-intro {
+  max-width: 46ch;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ---------- 6. SIGNATURE ELEMENT: "ARTBOARD" FRAMES ----------
+   A recurring motif across the page: corner brackets that echo a
+   design tool's "selected artboard" indicator. Used on the hero
+   visual, certificate card, and project mockup. */
+.artboard {
+  position: relative;
+  padding: 22px;
+}
+
+.artboard::before,
+.artboard::after,
+.artboard .mock-app::before,
+.artboard .mock-app::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--color-accent);
+  border-style: solid;
+  border-width: 0;
+}
+
+.artboard::before {
+  top: 0;
+  left: 0;
+  border-top-width: 3px;
+  border-left-width: 3px;
+}
+
+.artboard::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 3px;
+  border-right-width: 3px;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-artboard {
+  width: 100%;
+  max-width: 380px;
+}
+
+.mock-window {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.mock-topbar {
+  display: flex;
+  gap: 6px;
+  padding: 12px 14px;
+  background-color: var(--color-primary-light);
+}
+
+.mock-topbar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  opacity: 0.55;
+}
+
+.mock-topbar span:nth-child(1) { background-color: var(--color-accent); opacity: 0.8; }
+
+.mock-body {
+  padding: 24px;
+}
+
+.mock-block {
+  height: 60px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.block-a { background-color: var(--color-primary); }
+.block-b { background-color: var(--color-primary-light); border: 1px dashed var(--color-primary); }
+
+.mock-line {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--color-border);
+  margin-bottom: 8px;
+}
+
+.mock-line.short { width: 40%; }
+.mock-line.long { width: 90%; }
+
+.floating-tag {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background-color: var(--color-ink);
+  color: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.code-tag {
+  top: -14px;
+  right: -10px;
+}
+
+.figma-tag {
+  bottom: 10px;
+  left: -18px;
+  background-color: var(--color-accent);
+}
+
+/* ---------- 7. ABOUT SECTION ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-text {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.quick-facts {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 8px 24px;
+}
+
+.quick-facts li {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+}
+
+.quick-facts li:last-child {
+  border-bottom: none;
+}
+
+.fact-label {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.fact-value {
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ---------- 8. CAREER OBJECTIVE ---------- */
+.objective-quote {
+  position: relative;
+  max-width: 760px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+.quote-mark {
+  display: block;
+  font-size: 4rem;
+  color: var(--color-primary-light);
+  line-height: 1;
+  margin-bottom: -10px;
+}
+
+/* ---------- 9. EDUCATION ---------- */
+.education-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+.education-mark {
+  font-size: 2rem;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+}
+
+.education-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.education-meta {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.education-desc {
+  color: var(--color-muted);
+}
+
+/* ---------- 10. SKILLS ---------- */
+.skills-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.skills-group h3 {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-chips li {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-chips li:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.project-tags {
+  margin: 18px 0 26px;
+}
+
+/* ---------- 11. INTERNSHIP ---------- */
+.internship-grid,
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.internship-text h3,
+.project-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.internship-text p,
+.project-info p {
+  color: var(--color-muted);
+}
+
+.certificate-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.certificate-inner {
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 40px 24px;
+  text-align: center;
+  background-color: var(--color-primary-light);
+}
+
+.certificate-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+}
+
+.certificate-seal {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, var(--color-accent) 70%);
+  box-shadow: var(--shadow-soft);
+}
+
+.certificate-title {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.certificate-name {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.certificate-ribbon {
+  width: 40px;
+  height: 26px;
+  margin: 0 auto;
+  background-color: var(--color-primary);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%);
+}
+
+/* ---------- 12. PROJECTS ---------- */
+.project-visual {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.mock-app {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.mock-app-body {
+  padding: 20px;
+  background-color: var(--color-bg);
+}
+
+.mock-app-header {
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-ink);
+  margin-bottom: 16px;
+}
+
+.mock-app-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.mock-app-card {
+  flex: 1;
+  height: 80px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary-light);
+  border: 1px solid var(--color-border);
+}
+
+.mock-app-button {
+  width: 45%;
+  height: 30px;
+  border-radius: 999px;
+  background-color: var(--color-accent);
+}
+
+/* ---------- 13. CONTACT ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+}
+
+.contact-info p {
+  color: var(--color-muted);
+  margin-bottom: 26px;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 0.95rem;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  min-width: 80px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-form label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.contact-form button {
+  margin-top: 18px;
+  align-self: flex-start;
+}
+
+/* ---------- 14. FOOTER ---------- */
+.site-footer {
+  background-color: var(--color-ink);
+  color: #ffffff;
+  padding: 50px 24px 26px;
+}
+
+.footer-content {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-logo {
+  color: #ffffff;
+}
+
+.footer-links,
+.footer-socials {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  color: var(--color-accent);
+}
+
+.footer-copy {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-top: 22px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+
+/* =========================================================
+   15. RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+/* ----- Tablet (max-width: 900px) ----- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .hero-intro {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    margin-top: 20px;
+  }
+
+  .about-grid,
+  .internship-grid,
+  .project-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .internship-grid .internship-text,
+  .project-grid .project-info {
+    order: 2;
+  }
+}
+
+/* ----- Mobile (max-width: 640px) ----- */
+@media (max-width: 640px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 10px 20px 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  /* Reveal the mobile menu when the hidden checkbox is checked */
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 400px;
+    padding: 10px 20px 20px;
+  }
+
+  .section {
+    padding: 64px 20px;
+  }
+
+  .skills-columns {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .education-card {
+    flex-direction: column;
+  }
+
+  .fact-value {
+    text-align: left;
+  }
+
+  .quick-facts li {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

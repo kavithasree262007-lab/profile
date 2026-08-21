@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavitha | UI/UX Designer & Python Developer</title>
+  <meta name="description" content="Portfolio of Kavitha — BCA student, UI/UX Designer and Python Developer." />
+
+  <!-- Google Fonts: Space Grotesk (headings), Inter (body), JetBrains Mono (tags/code accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">Kavitha<span class="logo-dot">.</span></a>
+
+      <!-- Pure-CSS mobile menu toggle (no JavaScript) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#objective">Objective</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#internship">Internship</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HOME / HERO SECTION ============ -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1 class="hero-name">Kavitha</h1>
+        <p class="hero-role">UI/UX Designer <span class="role-divider">&amp;</span> Python Developer</p>
+        <p class="hero-intro">
+          A BCA student who enjoys shaping ideas into clean interfaces and turning logic
+          into working code — currently building a career at the intersection of
+          thoughtful design and practical development.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- Signature visual: an "artboard" made of layered CSS panels, evoking a design canvas -->
+      <div class="hero-visual">
+        <div class="artboard hero-artboard">
+          <div class="mock-window">
+            <div class="mock-topbar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mock-body">
+              <div class="mock-block block-a"></div>
+              <div class="mock-block block-b"></div>
+              <div class="mock-line short"></div>
+              <div class="mock-line"></div>
+              <div class="mock-line long"></div>
+            </div>
+          </div>
+          <div class="floating-tag code-tag">&lt;/&gt; python</div>
+          <div class="floating-tag figma-tag">figma</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ME SECTION ============ -->
+    <section id="about" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">About Me</p>
+        <h2>A little about who I am</h2>
+      </div>
+
+      <div class="about-grid">
+        <p class="about-text">
+          I'm Kavitha, a BCA (Bachelor of Computer Applications) student with a strong interest
+          in UI/UX design and Python development. I like understanding how people use a product
+          and then designing screens that feel simple and natural — while also enjoying the
+          logical, problem-solving side of writing Python code. I'm constantly learning new tools
+          and design patterns to build digital experiences that are both useful and pleasant to use.
+        </p>
+
+        <ul class="quick-facts">
+          <li><span class="fact-label">Studying</span><span class="fact-value">BCA</span></li>
+          <li><span class="fact-label">Focus</span><span class="fact-value">UI/UX Design &amp; Python</span></li>
+          <li><span class="fact-label">Tools</span><span class="fact-value">Figma</span></li>
+          <li><span class="fact-label">Status</span><span class="fact-value">Open to opportunities</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CAREER OBJECTIVE SECTION ============ -->
+    <section id="objective" class="section section-muted">
+      <div class="section-heading">
+        <p class="eyebrow">Career Objective</p>
+        <h2>What I'm working towards</h2>
+      </div>
+
+      <blockquote class="objective-quote">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        Kavitha is a passionate BCA student interested in UI/UX design and Python development.
+        She aims to create user-friendly, creative, and practical digital experiences while
+        continuously improving her technical and design skills. She is looking for an
+        opportunity to learn, grow, and contribute to a professional organization.
+      </blockquote>
+    </section>
+
+    <!-- ============ EDUCATION SECTION ============ -->
+    <section id="education" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Education</p>
+        <h2>Academic background</h2>
+      </div>
+
+      <div class="education-card">
+        <div class="education-mark">🎓</div>
+        <div class="education-details">
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <p class="education-meta">College Name &middot; Year of Study</p>
+          <p class="education-desc">
+            Pursuing a strong foundation in computer applications, programming, and software
+            development, with a focused interest in UI/UX design and Python.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="section section-muted">
+      <div class="section-heading">
+        <p class="eyebrow">Skills</p>
+        <h2>What I work with</h2>
+      </div>
+
+      <div class="skills-columns">
+        <div class="skills-group">
+          <h3>Design</h3>
+          <ul class="skill-chips">
+            <li>UI/UX Design</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <h3>Development</h3>
+          <ul class="skill-chips">
+            <li>Python</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERNSHIP SECTION ============ -->
+    <section id="internship" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Internship</p>
+        <h2>Hands-on experience</h2>
+      </div>
+
+      <div class="internship-grid">
+        <div class="internship-text">
+          <h3>UI/UX Design Internship</h3>
+          <p class="education-meta">Completed</p>
+          <p>
+            Completed a UI/UX Design internship, gaining practical experience in user research,
+            wireframing, prototyping, and designing interfaces with Figma. This internship
+            strengthened my understanding of how good design solves real user problems.
+          </p>
+        </div>
+
+        <!-- Certificate placeholder, drawn with CSS. Replace this block with an <img> tag
+             (e.g. <img src="certificate.jpg" alt="UI/UX Internship Certificate">) once the
+             real certificate image file is available. -->
+        <div class="artboard certificate-card">
+          <div class="certificate-inner">
+            <p class="certificate-kicker">Certificate of Completion</p>
+            <div class="certificate-seal"></div>
+            <h4 class="certificate-title">UI/UX Design Internship</h4>
+            <p class="certificate-name">Awarded to Kavitha</p>
+            <div class="certificate-ribbon"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section id="projects" class="section section-muted">
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected work</h2>
+      </div>
+
+      <div class="project-grid">
+        <!-- Project mockup, drawn with CSS in place of a screenshot.
+             Swap the .mock-app div for an <img> tag once a real project screenshot exists. -->
+        <div class="artboard project-visual">
+          <div class="mock-app">
+            <div class="mock-topbar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mock-app-body">
+              <div class="mock-app-header"></div>
+              <div class="mock-app-row">
+                <div class="mock-app-card"></div>
+                <div class="mock-app-card"></div>
+              </div>
+              <div class="mock-app-button"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <h3>UI/UX Design Project</h3>
+          <p>
+            Designed a complete user interface for a digital product from the ground up —
+            covering user flows, wireframes, and a final high-fidelity prototype in Figma,
+            with a focus on clarity, accessibility, and a consistent visual system.
+          </p>
+          <ul class="skill-chips project-tags">
+            <li>Figma</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-small">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's connect</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            I'm currently looking for internship and entry-level opportunities in UI/UX design
+            and Python development. Feel free to reach out — I'd love to hear from you.
+          </p>
+          <ul class="contact-list">
+            <li><span class="contact-label">Email</span> kavitha@example.com</li>
+            <li><span class="contact-label">Phone</span> +91 00000 00000</li>
+            <li><span class="contact-label">Location</span> India</li>
+          </ul>
+        </div>
+
+        <!-- Simple static contact form (no JavaScript, needs a backend/service to actually send) -->
+        <form class="contact-form" action="#" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me a bit about the opportunity or project..." required></textarea>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <a href="#home" class="logo footer-logo">Kavitha<span class="logo-dot">.</span></a>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="footer-socials">
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">Behance</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">&copy; <span id="year">2026</span> Kavitha. Designed &amp; built with care.</p>
+  </footer>
+
+</body>
+</html>
